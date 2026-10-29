@@ -662,7 +662,7 @@ header li:has(a[href*="STUDIO _ Phubbed Studio"]),
 
 #phubbed-portfolio-showcase,
 #comp-lzfv67u1 {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 80px !important;
 }
 
 /* Redundant buttons cleanup */
@@ -1547,7 +1547,7 @@ header li:has(a[href*="STUDIO _ Phubbed Studio"]),
     width: 69%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 140px 0 140px 0;
+    padding: 15px 0 120px 0 !important;
     box-sizing: border-box;
     position: relative;
     font-family: helvetica-w01-roman, Helvetica, Arial, sans-serif !important;
@@ -2849,11 +2849,11 @@ document.addEventListener("DOMContentLoaded", function() {
 /* HERO & CELLPHONES STACKING  */
 @media screen and (min-width: 1001px) {
     #comp-kbgaghri {
-        position: sticky !important;
+        position: relative !important;
         top: 0 !important;
-        z-index: 60 !important;
-        background-color: transparent !important;
-        pointer-events: none !important;
+        z-index: 10 !important;
+        background-color: #000000 !important;
+        pointer-events: auto !important;
         min-height: 100vh !important;
         height: 100vh !important;
         display: flex !important;
@@ -2867,10 +2867,7 @@ document.addEventListener("DOMContentLoaded", function() {
         background-color: transparent !important;
     }
     #comp-lzflapl6 {
-        z-index: 70 !important;
         position: relative !important;
-        pointer-events: none !important;
-        user-select: none !important;
         text-align: center !important;
         max-width: 680px !important;
         margin: 0 auto !important;
@@ -3187,7 +3184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="phubbed-hero-footer-stop">
 (function() {
     function handleHeroFooterStop() {
-        if (window.innerWidth <= 1000) return;
+        if (window.innerWidth <= 1000 || window.scrollY > 1000) return;
         var textBox = document.getElementById('comp-lzflapl6');
         var footer = document.querySelector('footer');
         if (!textBox || !footer) return;
