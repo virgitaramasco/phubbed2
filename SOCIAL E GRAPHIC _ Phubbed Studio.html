@@ -2238,8 +2238,108 @@ header li:has(a[href*="STUDIO _ Phubbed Studio"]),
 }
 
 </style>
+
+  <!-- Phubbed Page Loader Style -->
+  <style id="phubbed-loader-style">
+    #phubbed-page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background-color: #000000;
+      z-index: 99999999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
+      opacity: 1;
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.45s ease;
+    }
+    #phubbed-page-loader.phubbed-loader-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .phubbed-loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .phubbed-loader-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      user-select: none;
+      pointer-events: none;
+    }
+    .phubbed-loader-percent {
+      font-family: helvetica-w01-roman, Helvetica, Arial, sans-serif !important;
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.1em;
+      font-variant-numeric: tabular-nums;
+      user-select: none;
+    }
+  </style>
+
 </head>
 <body class="responsive" style="--scrollbar-width: 15px;">
+
+  <!-- Phubbed Centered Page Loader -->
+  <div id="phubbed-page-loader" aria-hidden="true">
+    <div class="phubbed-loader-content">
+      <img src="favicon.png" alt="Phubbed Studio" class="phubbed-loader-logo" />
+      <span class="phubbed-loader-percent" id="phubbed-loader-percent">0%</span>
+    </div>
+  </div>
+  <script id="phubbed-loader-script">
+  (function() {
+    var loader = document.getElementById('phubbed-page-loader');
+    var percentEl = document.getElementById('phubbed-loader-percent');
+    if (!loader || !percentEl) return;
+    var percent = 0;
+    var isLoaded = false;
+    var timer = setInterval(function() {
+      if (!isLoaded) {
+        if (percent < 75) {
+          percent += Math.floor(Math.random() * 6) + 3;
+        } else if (percent < 93) {
+          percent += 1;
+        }
+      } else {
+        percent += Math.floor(Math.random() * 8) + 10;
+      }
+      if (percent >= 100) {
+        percent = 100;
+        percentEl.textContent = '100%';
+        clearInterval(timer);
+        setTimeout(function() {
+          loader.classList.add('phubbed-loader-hidden');
+          setTimeout(function() {
+            if (loader.parentNode) loader.parentNode.removeChild(loader);
+          }, 500);
+        }, 150);
+        return;
+      }
+      percentEl.textContent = percent + '%';
+    }, 25);
+    function onReady() { isLoaded = true; }
+    if (document.readyState === 'complete') {
+      setTimeout(onReady, 200);
+    } else {
+      window.addEventListener('load', onReady);
+      setTimeout(onReady, 1800);
+    }
+  })();
+  </script>
+
 <script type="text/javascript">
     var bodyCacheable = true;
     
