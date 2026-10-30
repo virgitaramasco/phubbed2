@@ -2848,54 +2848,67 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style id="hero-cellphones-stacking">
-/* REMOVE SCROLL IMAGES - KEEP CENTERED HERO TEXT */
+/* REMOVE SCROLL IMAGES - HERO TEXT FLOATS OVER GRID IN Z-INDEX */
 #comp-lzehumb8 {
     display: none !important;
 }
 
+#comp-kbgaghri {
+    grid-row: 1 / 2 !important;
+    grid-area: 1 / 1 / 2 / 2 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 60 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    pointer-events: none !important;
+    min-height: 100vh !important;
+    height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#bgLayers_comp-kbgaghri,
+#bgLayers_comp-kbgaghri * {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+#comp-lzflapl6 {
+    position: relative !important;
+    text-align: center !important;
+    max-width: 680px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    z-index: 70 !important;
+}
+
+#comp-lzbc48et {
+    text-align: center !important;
+    margin-bottom: 16px !important;
+}
+
+#comp-lzbc1lc1 {
+    text-align: center !important;
+}
+
+#comp-lzfv67u1 {
+    grid-row: 1 / 2 !important;
+    grid-area: 1 / 1 / 2 / 2 !important;
+    position: relative !important;
+    z-index: 20 !important;
+    background-color: #000000 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
 @media screen and (min-width: 1001px) {
-    #comp-kbgaghri {
-        display: flex !important;
-        position: relative !important;
-        top: 0 !important;
-        z-index: 10 !important;
-        background-color: #000000 !important;
-        pointer-events: auto !important;
-        min-height: 100vh !important;
-        height: 100vh !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    #bgLayers_comp-kbgaghri,
-    #bgLayers_comp-kbgaghri * {
-        background: transparent !important;
-        background-color: transparent !important;
-    }
-    #comp-lzflapl6 {
-        position: relative !important;
-        text-align: center !important;
-        max-width: 680px !important;
-        margin: 0 auto !important;
-        transform: none !important;
-        display: block !important;
-    }
-    #comp-lzbc48et {
-        text-align: center !important;
-        margin-bottom: 16px !important;
-    }
-    #comp-lzbc1lc1 {
-        text-align: center !important;
-    }
-    #comp-lzfv67u1 {
-        position: relative !important;
-        z-index: 20 !important;
-        background-color: #000000 !important;
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-    }
     #phubbed-portfolio-showcase.phubbed-portfolio-container {
-        padding-top: 15px !important;
+        padding-top: 100px !important;
         padding-bottom: 120px !important;
     }
     #phubbed-portfolio-showcase,
@@ -2904,30 +2917,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 }
 
-/* MOBILE VIEW: CLEAN NATURAL FLOW WITH CENTERED TEXT */
+/* MOBILE VIEW */
 @media screen and (max-width: 1000px) {
     #comp-kbgaghri {
-        display: flex !important;
-        position: relative !important;
-        top: 0 !important;
-        min-height: 100vh !important;
-        height: 100vh !important;
         height: 100dvh !important;
-        margin-top: 0 !important;
-        background-color: transparent !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        z-index: 10 !important;
     }
     #comp-lzflapl6 {
-        position: relative !important;
         width: 90% !important;
         max-width: 680px !important;
-        margin: 0 auto !important;
         display: block !important;
-        transform: none !important;
-        text-align: center !important;
     }
     #comp-lzflapl6 #comp-lzbc48et {
         position: absolute !important;
@@ -2950,15 +2948,8 @@ document.addEventListener("DOMContentLoaded", function() {
         font-size: clamp(16px, 4.8vw, 19px) !important;
         line-height: 1.35 !important;
     }
-    #comp-lzfv67u1 {
-        position: relative !important;
-        z-index: 20 !important;
-        background-color: #000000 !important;
-        padding-top: 0 !important;
-        margin-top: 0 !important;
-    }
     #phubbed-portfolio-showcase.phubbed-portfolio-container {
-        padding-top: 15px !important;
+        padding-top: 95px !important;
         padding-bottom: 100px !important;
     }
     #phubbed-portfolio-showcase,
@@ -3132,12 +3123,9 @@ document.addEventListener('DOMContentLoaded', function() {
                              window.location.pathname === '/' || 
                              window.location.pathname.endsWith('/');
                 if (isHome) {
-                    var showcase = document.getElementById('phubbed-portfolio-showcase') || document.getElementById('comp-lzfv67u1');
-                    if (showcase) {
-                        e.preventDefault();
-                        showcase.scrollIntoView({ behavior: 'smooth' });
-                        history.pushState(null, null, '#phubbed-portfolio-showcase');
-                    }
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '#phubbed-portfolio-showcase');
                 }
             });
         }
@@ -3157,7 +3145,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script id="phubbed-hero-footer-stop">
 (function() {
     function handleHeroFooterStop() {
-        if (window.innerWidth <= 1000 || window.scrollY > 1000) return;
+        if (window.innerWidth <= 1000) return;
         var textBox = document.getElementById('comp-lzflapl6');
         var footer = document.querySelector('footer');
         if (!textBox || !footer) return;
