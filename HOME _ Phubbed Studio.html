@@ -2034,8 +2034,10 @@ function triggerScrollAnimation() {
         window.addEventListener('resize', onScroll, { passive: true });
         
         // Initial trigger
-        setTimeout(onScroll, 100);
-        setTimeout(onScroll, 400);
+        triggerScrollAnimation();
+        setTimeout(onScroll, 50);
+        setTimeout(onScroll, 200);
+        setTimeout(onScroll, 500);
 
         // Restore saved view preference
         try {
@@ -2570,171 +2572,51 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style id="hero-cellphones-stacking">
-/* HERO & CELLPHONES STACKING  */
-@media screen and (min-width: 1001px) {
-    #comp-kbgaghri {
-        position: relative !important;
-        top: 0 !important;
-        z-index: 10 !important;
-        background-color: #000000 !important;
-        pointer-events: auto !important;
-        min-height: 100vh !important;
-        height: 100vh !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    #bgLayers_comp-kbgaghri,
-    #bgLayers_comp-kbgaghri * {
-        background: transparent !important;
-        background-color: transparent !important;
-    }
-    #comp-lzflapl6 {
-        position: relative !important;
-        text-align: center !important;
-        max-width: 680px !important;
-        margin: 0 auto !important;
-        transform: none !important;
-    }
-    #comp-lzehumb8 {
-        position: relative !important;
-        z-index: 10 !important;
-        background-color: transparent !important;
-    }
-    #bgLayers_comp-lzehumb8,
-    #bgLayers_comp-lzehumb8 * {
-        background: transparent !important;
-        background-color: transparent !important;
-    }
-    /* Central text stays on top of grid (z-index above grid) */
-    #comp-lzfv67u1,
-    #comp-mkug7jvg {
-        position: relative !important;
-        z-index: 20 !important;
-        background-color: #000000 !important;
-    }
-
-    /* Footer stays on top with solid background */
-    footer,
-    #comp-mkvj5006,
-    #comp-mkvj5006 * {
-        position: relative;
-        z-index: 100 !important;
-    }
-    footer,
-    #comp-mkvj5006 {
-        background-color: #000000 !important;
-    }
-    #bgLayers_comp-lzfv67u1,
-    #bgLayers_comp-lzfv67u1 * {
-        background: #000000 !important;
-        background-color: #000000 !important;
-    }
+/* DIRECT PORTFOLIO START - REMOVE HERO AND SCROLL IMAGES */
+#comp-kbgaghri,
+#comp-lzehumb8 {
+    display: none !important;
 }
 
-/* MOBILE VIEW: CLEAN NATURAL FLOW  */
+#comp-lzfv67u1 {
+    grid-row: 1 / 2 !important;
+    grid-area: 1 / 1 / 2 / 2 !important;
+    position: relative !important;
+    z-index: 20 !important;
+    background-color: #000000 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+#phubbed-portfolio-showcase.phubbed-portfolio-container {
+    padding-top: 110px !important;
+    padding-bottom: 120px !important;
+}
+
 @media screen and (max-width: 1000px) {
-    #comp-kbgaghri {
-        position: relative !important;
-        min-height: 100vh !important;
-        height: 100vh !important;
-        height: 100dvh !important;
-        margin-top: 0 !important;
-        top: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        background-color: transparent !important;
-    }
-    #comp-lzflapl6 {
-        position: relative !important;
-        width: 90% !important;
-        max-width: 680px !important;
-        margin: 0 auto !important;
-        display: block !important;
-        transform: none !important;
-        text-align: center !important;
-    }
-    #comp-lzflapl6 #comp-lzbc48et {
-        position: absolute !important;
-        bottom: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        margin-bottom: 16px !important;
-        text-align: center !important;
-    }
-    #comp-lzflapl6 #comp-lzbc48et :is(h1, span, p, div) {
-        font-size: clamp(9.5px, 2.6vw, 11px) !important;
-        line-height: 1.4 !important;
-    }
-    #comp-lzflapl6 #comp-lzbc1lc1 {
-        position: relative !important;
-        width: 100% !important;
-        text-align: center !important;
-    }
-    #comp-lzflapl6 #comp-lzbc1lc1 :is(p, span, h1, h2, div) {
-        font-size: clamp(16px, 4.8vw, 19px) !important;
-        line-height: 1.35 !important;
-    }
-    #comp-lzehumb8 {
-        position: relative !important;
-        margin-bottom: 0px !important;
-        padding-bottom: 40px !important;
-    }
-    /* Phubbed Studio text: positioned across phones at bottom, matching desktop */
-    #SITE_CONTAINER #comp-lzigzr5b,
-    body #comp-lzigzr5b {
-        position: relative !important;
-        top: 0 !important;
-        margin-top: 1850px !important;
-        margin-bottom: 0 !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        text-align: center !important;
-        transform: none !important;
-        transition: none !important;
-        opacity: 1 !important;
-        z-index: 50 !important;
-        mix-blend-mode: difference !important;
-        pointer-events: auto !important;
-    }
-    #SITE_CONTAINER #comp-lzigzr5b.custom-slide-up,
-    #SITE_CONTAINER #comp-lzigzr5b.custom-slide-up-visible,
-    body #comp-lzigzr5b.custom-slide-up,
-    body #comp-lzigzr5b.custom-slide-up-visible {
-        transform: none !important;
-        opacity: 1 !important;
-        transition: none !important;
-    }
-    #SITE_CONTAINER #comp-lzigzr5b p,
-    #SITE_CONTAINER #comp-lzigzr5b span,
-    #SITE_CONTAINER #comp-lzigzr5b .font_0,
-    body #comp-lzigzr5b p,
-    body #comp-lzigzr5b span,
-    body #comp-lzigzr5b .font_0 {
-        font-size: clamp(24px, 7vw, 36px) !important;
-        white-space: nowrap !important;
-        text-align: center !important;
-        line-height: 1.2 !important;
-        letter-spacing: -0.01em !important;
+    #phubbed-portfolio-showcase.phubbed-portfolio-container {
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
     }
 }
 
-/* ELIMINATE ALL DYNAMIC PARALLAX */
-#comp-lzigzq9p,
-#comp-lzigzqw6,
-#comp-lzigzqlf,
-#comp-lzigzq9p *,
-#comp-lzigzqw6 *,
-#comp-lzigzqlf *,
-#comp-lzigzr5b {
-    will-change: auto !important;
-    animation: none !important;
+/* Footer stays on top with solid background */
+footer,
+#comp-mkvj5006,
+#comp-mkvj5006 * {
+    position: relative;
+    z-index: 100 !important;
 }
+footer,
+#comp-mkvj5006 {
+    background-color: #000000 !important;
+}
+#bgLayers_comp-lzfv67u1,
+#bgLayers_comp-lzfv67u1 * {
+    background: #000000 !important;
+    background-color: #000000 !important;
+}
+
 .progetto-card .immagine-wrapper {
     transform: none !important;
 }
@@ -2883,12 +2765,9 @@ document.addEventListener('DOMContentLoaded', function() {
                              window.location.pathname === '/' || 
                              window.location.pathname.endsWith('/');
                 if (isHome) {
-                    var showcase = document.getElementById('phubbed-portfolio-showcase') || document.getElementById('comp-lzfv67u1');
-                    if (showcase) {
-                        e.preventDefault();
-                        showcase.scrollIntoView({ behavior: 'smooth' });
-                        history.pushState(null, null, '#phubbed-portfolio-showcase');
-                    }
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    history.pushState(null, null, '#phubbed-portfolio-showcase');
                 }
             });
         }
