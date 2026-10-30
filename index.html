@@ -489,42 +489,62 @@
 </style>
 
 <style id="custom-hero-centered">
+#PAGE_SECTIONSc1dmp {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 1 / -1 !important;
+    width: 100% !important;
+}
 #comp-kbgaghri {
-    min-height: 100vh !important;
+    position: relative !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    background-color: #000000 !important;
+    min-height: 0 !important;
+    height: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    background-color: #000000 !important;
+    padding-top: 110px !important;
+    padding-bottom: 25px !important;
 }
 #comp-kbgaghri .comp-kbgaghri-container {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 20px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     width: 100% !important;
-    min-height: 100vh !important;
-    padding: 0 20px !important;
     box-sizing: border-box !important;
 }
+#bgLayers_comp-kbgaghri,
+#bgLayers_comp-kbgaghri * {
+    background: transparent !important;
+    background-color: transparent !important;
+    min-height: 0 !important;
+    height: 100% !important;
+}
 #comp-lzflapl6 {
-    margin: 0 auto !important;
-    align-self: center !important;
-    justify-self: center !important;
+    position: relative !important;
     text-align: center !important;
-    width: 100% !important;
     max-width: 680px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    width: 100% !important;
     padding: 0 20px !important;
     box-sizing: border-box !important;
-    position: relative !important;
-    z-index: 20 !important;
+    height: auto !important;
+    min-height: 0 !important;
 }
 #comp-lzbc48et {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 auto 20px auto !important;
+    margin: 0 auto 14px auto !important;
     text-align: center !important;
-    align-self: center !important;
 }
 #comp-lzbc48et *,
 #comp-lzbc48et h1,
@@ -537,7 +557,6 @@
     max-width: 100% !important;
     margin: 0 auto !important;
     text-align: center !important;
-    align-self: center !important;
 }
 #comp-lzbc1lc1 *,
 #comp-lzbc1lc1 p,
@@ -2700,62 +2719,8 @@ footer[id^="comp-"] {
     }
 }
 </style>
-<style>
-/* Make Hero and Pink Poppy sections 100vh on mobile */
-@media screen and (max-width: 1000px) {
-    #comp-lzehumb8,
-    #comp-kbgaghri {
-        min-height: 100vh !important;
-    }
-}
-</style>
-<style>
-/* Full screen Hero Video, Pink Poppy, and Centered Text on Mobile */
-@media screen and (max-width: 1000px) {
-    /* 1. Video Box to 100vh */
-    #comp-mku9gk6o {
-        height: 100vh !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        margin: 0 !important;
-        margin-left: calc(-50vw + 50%) !important;
-        aspect-ratio: auto !important;
-    }
-    #comp-mku9gk6o wix-video, 
-    #comp-mku9gk6o video {
-        height: 100vh !important;
-        width: 100vw !important;
-        object-fit: cover !important;
-    }
-    
-    /* 2. Text Box Centered with high Z-index */
-    #comp-lzflapl6 {
-        margin: 0 !important;
-        align-self: center !important;
-        justify-self: center !important;
-        z-index: 100 !important;
-        width: 90% !important;
-        text-align: center !important;
-    }
 
-    /* 3. Pink Poppy to 100vh */
-    #comp-mku9ro0o {
-        height: 100vh !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        min-width: 100vw !important;
-        margin: 0 !important;
-        margin-left: calc(-50vw + 50%) !important;
-        aspect-ratio: auto !important;
-        z-index: 50 !important;
-    }
-    #comp-mku9ro0o img {
-        object-fit: cover !important;
-        height: 100% !important;
-        width: 100% !important;
-    }
-}
-</style>
+
 
 <style>
 /* Base slide-up classes */
@@ -2848,67 +2813,31 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style id="hero-cellphones-stacking">
-/* REMOVE SCROLL IMAGES - HERO TEXT FLOATS OVER GRID IN Z-INDEX */
+/* REMOVE SCROLL IMAGES */
 #comp-lzehumb8 {
     display: none !important;
 }
 
-#comp-kbgaghri {
-    grid-row: 1 / 2 !important;
-    grid-area: 1 / 1 / 2 / 2 !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 60 !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    pointer-events: none !important;
-    min-height: 100vh !important;
-    height: 100vh !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-#bgLayers_comp-kbgaghri,
-#bgLayers_comp-kbgaghri * {
-    background: transparent !important;
-    background-color: transparent !important;
-}
-
-#comp-lzflapl6 {
-    position: relative !important;
-    text-align: center !important;
-    max-width: 680px !important;
-    margin: 0 auto !important;
-    transform: none !important;
-    pointer-events: none !important;
-    user-select: none !important;
-    z-index: 70 !important;
-}
-
-#comp-lzbc48et {
-    text-align: center !important;
-    margin-bottom: 16px !important;
-}
-
-#comp-lzbc1lc1 {
-    text-align: center !important;
-}
-
 #comp-lzfv67u1 {
-    grid-row: 1 / 2 !important;
-    grid-area: 1 / 1 / 2 / 2 !important;
     position: relative !important;
-    z-index: 20 !important;
+    z-index: 10 !important;
     background-color: #000000 !important;
     padding-top: 0 !important;
     margin-top: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    display: block !important;
 }
 
 @media screen and (min-width: 1001px) {
+    #comp-kbgaghri {
+        min-height: 0 !important;
+        height: auto !important;
+        padding-top: 110px !important;
+        padding-bottom: 25px !important;
+    }
     #phubbed-portfolio-showcase.phubbed-portfolio-container {
-        padding-top: 100px !important;
+        padding-top: 15px !important;
         padding-bottom: 120px !important;
     }
     #phubbed-portfolio-showcase,
@@ -2920,19 +2849,26 @@ document.addEventListener("DOMContentLoaded", function() {
 /* MOBILE VIEW */
 @media screen and (max-width: 1000px) {
     #comp-kbgaghri {
-        height: 100dvh !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding-top: 95px !important;
+        padding-bottom: 20px !important;
+    }
+    #comp-kbgaghri .comp-kbgaghri-container {
+        min-height: 0 !important;
+        height: auto !important;
     }
     #comp-lzflapl6 {
         width: 90% !important;
         max-width: 680px !important;
         display: block !important;
+        min-height: 0 !important;
+        height: auto !important;
     }
     #comp-lzflapl6 #comp-lzbc48et {
-        position: absolute !important;
-        bottom: 100% !important;
-        left: 0 !important;
+        position: relative !important;
         width: 100% !important;
-        margin-bottom: 16px !important;
+        margin-bottom: 12px !important;
         text-align: center !important;
     }
     #comp-lzflapl6 #comp-lzbc48et :is(h1, span, p, div) {
@@ -2949,7 +2885,7 @@ document.addEventListener("DOMContentLoaded", function() {
         line-height: 1.35 !important;
     }
     #phubbed-portfolio-showcase.phubbed-portfolio-container {
-        padding-top: 95px !important;
+        padding-top: 10px !important;
         padding-bottom: 100px !important;
     }
     #phubbed-portfolio-showcase,
