@@ -490,28 +490,28 @@
 
 <style id="custom-hero-centered">
 #PAGE_SECTIONSc1dmp {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-column: 1 / -1 !important;
-    grid-row: 1 / -1 !important;
-    width: 100% !important;
+    display: contents !important;
 }
 #comp-kbgaghri {
-    position: relative !important;
+    position: fixed !important;
     top: 0 !important;
-    z-index: 10 !important;
-    background-color: #000000 !important;
-    min-height: 0 !important;
-    height: auto !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    z-index: 50 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    pointer-events: none !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding-top: 110px !important;
-    padding-bottom: 25px !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 #comp-kbgaghri .comp-kbgaghri-container {
-    min-height: 0 !important;
+    min-height: auto !important;
     height: auto !important;
     padding: 0 20px !important;
     display: flex !important;
@@ -520,13 +520,11 @@
     justify-content: center !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    pointer-events: none !important;
 }
 #bgLayers_comp-kbgaghri,
 #bgLayers_comp-kbgaghri * {
-    background: transparent !important;
-    background-color: transparent !important;
-    min-height: 0 !important;
-    height: 100% !important;
+    display: none !important;
 }
 #comp-lzflapl6 {
     position: relative !important;
@@ -537,32 +535,38 @@
     width: 100% !important;
     padding: 0 20px !important;
     box-sizing: border-box !important;
-    height: auto !important;
-    min-height: 0 !important;
+    pointer-events: none !important;
+    user-select: none !important;
 }
 #comp-lzbc48et {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 auto 14px auto !important;
+    margin: 0 auto 16px auto !important;
     text-align: center !important;
+    pointer-events: none !important;
 }
 #comp-lzbc48et *,
 #comp-lzbc48et h1,
 #comp-lzbc48et span {
     text-align: center !important;
     display: block !important;
+    pointer-events: none !important;
+    color: #ffffff !important;
 }
 #comp-lzbc1lc1 {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     text-align: center !important;
+    pointer-events: none !important;
 }
 #comp-lzbc1lc1 *,
 #comp-lzbc1lc1 p,
 #comp-lzbc1lc1 span {
     text-align: center !important;
     line-height: 1.3 !important;
+    pointer-events: none !important;
+    color: #ffffff !important;
 }
 </style>
 
@@ -2824,20 +2828,13 @@ document.addEventListener("DOMContentLoaded", function() {
     background-color: #000000 !important;
     padding-top: 0 !important;
     margin-top: 0 !important;
-    min-height: 0 !important;
-    height: auto !important;
+    min-height: 100vh !important;
     display: block !important;
 }
 
 @media screen and (min-width: 1001px) {
-    #comp-kbgaghri {
-        min-height: 0 !important;
-        height: auto !important;
-        padding-top: 110px !important;
-        padding-bottom: 25px !important;
-    }
     #phubbed-portfolio-showcase.phubbed-portfolio-container {
-        padding-top: 15px !important;
+        padding-top: 100px !important;
         padding-bottom: 120px !important;
     }
     #phubbed-portfolio-showcase,
@@ -2848,22 +2845,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* MOBILE VIEW */
 @media screen and (max-width: 1000px) {
-    #comp-kbgaghri {
-        min-height: 0 !important;
-        height: auto !important;
-        padding-top: 95px !important;
-        padding-bottom: 20px !important;
-    }
-    #comp-kbgaghri .comp-kbgaghri-container {
-        min-height: 0 !important;
-        height: auto !important;
-    }
     #comp-lzflapl6 {
         width: 90% !important;
         max-width: 680px !important;
         display: block !important;
-        min-height: 0 !important;
-        height: auto !important;
     }
     #comp-lzflapl6 #comp-lzbc48et {
         position: relative !important;
@@ -2874,6 +2859,7 @@ document.addEventListener("DOMContentLoaded", function() {
     #comp-lzflapl6 #comp-lzbc48et :is(h1, span, p, div) {
         font-size: clamp(9.5px, 2.6vw, 11px) !important;
         line-height: 1.4 !important;
+        color: #ffffff !important;
     }
     #comp-lzflapl6 #comp-lzbc1lc1 {
         position: relative !important;
@@ -2883,9 +2869,10 @@ document.addEventListener("DOMContentLoaded", function() {
     #comp-lzflapl6 #comp-lzbc1lc1 :is(p, span, h1, h2, div) {
         font-size: clamp(16px, 4.8vw, 19px) !important;
         line-height: 1.35 !important;
+        color: #ffffff !important;
     }
     #phubbed-portfolio-showcase.phubbed-portfolio-container {
-        padding-top: 10px !important;
+        padding-top: 90px !important;
         padding-bottom: 100px !important;
     }
     #phubbed-portfolio-showcase,
