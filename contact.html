@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Contact — Phubbed Studio</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  @font-face {
+    font-family: 'helvetica-w01-roman';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-roman.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'helvetica-w01-bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    min-height: 100%;
+    background: #ffffff;
+    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Motel Milano Minimal Header */
+  .motel-header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 26px;
+    box-sizing: border-box;
+    z-index: 99999;
+    pointer-events: none;
+  }
+  .motel-menu-comp {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    padding: 7px 14px;
+    pointer-events: auto;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .motel-menu-comp:hover {
+    background-color: rgba(245, 245, 245, 0.95);
+    border-color: rgba(0, 0, 0, 0.22);
+  }
+  .motel-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #000000;
+  }
+  .motel-logo-icon {
+    width: 20px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: invert(1);
+  }
+  .motel-brand-title {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #000000;
+    margin: 0;
+  }
+  .motel-brand-title strong {
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+  .motel-divider {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 11px;
+    font-weight: 700;
+    margin: 0 1px;
+    user-select: none;
+  }
+  .motel-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .motel-nav-link {
+    font-size: 11px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .motel-nav-link:hover {
+    opacity: 0.5;
+  }
+  .motel-nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* Main Contact Container */
+  .contact-page-container {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 24px 80px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .contact-content-box {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 24px;
+  }
+
+  .contact-brand-title {
+    font-size: 38px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #000000;
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+  .contact-brand-title span {
+    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+  }
+
+  .contact-tagline {
+    font-size: 13px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .contact-desc {
+    font-size: 13px;
+    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 20px;
+    max-width: 540px;
+  }
+
+  .contact-callout {
+    font-size: 13px;
+    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
+    color: #000000;
+    margin-bottom: 28px;
+  }
+
+  .contact-cta-btn {
+    display: inline-block;
+    padding: 13px 30px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 0 !important;
+    font-size: 11.5px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    margin-bottom: 36px;
+  }
+  .contact-cta-btn:hover {
+    background-color: transparent;
+    color: #000000;
+  }
+
+  .contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .contact-info-item {
+    font-size: 13px;
+    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .contact-info-item:hover {
+    opacity: 0.55;
+  }
+  .contact-info-link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .contact-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 38px;
+  }
+  .contact-social-link {
+    font-size: 11px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+  }
+  .contact-social-link:hover {
+    opacity: 0.5;
+  }
+
+  .contact-services-wrap {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 24px;
+    max-width: 560px;
+    width: 100%;
+  }
+  .contact-services-heading {
+    font-size: 10px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.45);
+    margin-bottom: 12px;
+  }
+  .contact-services-text {
+    font-size: 10px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.7;
+  }
+
+  /* Minimal Footer */
+  .motel-minimal-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+    box-sizing: border-box;
+    z-index: 99999;
+    pointer-events: none;
+  }
+  .motel-footer-mail {
+    pointer-events: auto;
+    font-size: 11px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #000000;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .motel-footer-mail:hover {
+    opacity: 0.55;
+  }
+  .motel-footer-center {
+    font-size: 11px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.45);
+    user-select: none;
+  }
+  .motel-footer-copy {
+    pointer-events: auto;
+    font-size: 11px;
+    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000000;
+    user-select: none;
+  }
+
+  /* Mobile Responsive */
+  @media screen and (max-width: 900px) {
+    .motel-header-bar {
+      padding: 10px 12px;
+      gap: 6px;
+    }
+    .motel-menu-comp {
+      padding: 6px 10px;
+      gap: 8px;
+    }
+    .motel-logo-icon {
+      width: 18px;
+      height: 18px;
+    }
+    .motel-divider {
+      font-size: 9px;
+      opacity: 0.35;
+    }
+    .motel-nav-links {
+      gap: 8px;
+    }
+    .motel-nav-link {
+      font-size: 10px;
+      letter-spacing: 0.05em;
+    }
+    .motel-brand-title {
+      display: none !important;
+    }
+    .motel-minimal-footer {
+      position: relative;
+      padding: 24px 20px;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      background: transparent;
+    }
+    .contact-page-container {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+    .contact-brand-title {
+      font-size: 30px;
+    }
+    .contact-tagline {
+      font-size: 11.5px;
+    }
+    .contact-desc {
+      font-size: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOTEL MILANO MINIMAL HEADER -->
+<div class="motel-header-bar">
+    <div class="motel-menu-comp">
+        <a href="index.html" class="motel-logo-wrap" title="Phubbed Studio - Home">
+            <img src="./HOME _ Phubbed Studio_files/Pink Poppy Flowers.png" alt="Phubbed Logo" class="motel-logo-icon" />
+            <span class="motel-brand-title"><strong>Phubbed</strong>Studio</span>
+        </a>
+        <span class="motel-divider">||</span>
+        <div class="motel-nav-links">
+            <a href="portfolio.html" class="motel-nav-link">PORTFOLIO</a>
+            <a href="CONTACT _ Phubbed Studio.html" class="motel-nav-link active">CONTACT</a>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT MAIN CONTENT -->
+<div class="contact-page-container">
+    <div class="contact-content-box">
+        <div class="contact-label">CONTACT</div>
+        
+        <h1 class="contact-brand-title"><strong>Phubbed</strong> <span>Studio™</span></h1>
+        
+        <div class="contact-tagline">YOUR BRAND COULD LOOK BETTER.</div>
+        
+        <p class="contact-desc">
+            Phubbed Studio is a creative agency working across branding, content, social media, events, photography &amp; videography and digital advertising.
+        </p>
+        
+        <div class="contact-callout">Let's talk about your project.</div>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSefVB4sMbBhABwpuOpyYzwHGICAOchx7hYmVoaYvtPd_kstxg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="contact-cta-btn">
+            &rarr; Book a call
+        </a>
+        
+        <div class="contact-info-list">
+            <a href="tel:+393348752499" class="contact-info-item">+39 334 875 2499</a>
+            <a href="mailto:phubbed.studio@gmail.com" class="contact-info-item contact-info-link">phubbed.studio@gmail.com</a>
+            <span class="contact-info-item">20132 Milan, Italy</span>
+        </div>
+        
+        <div class="contact-social-links">
+            <a href="https://www.instagram.com/phubbed.studio?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="contact-social-link">Instagram &#8599;</a>
+            <a href="https://www.linkedin.com/company/phubbed-studio/" target="_blank" rel="noopener noreferrer" class="contact-social-link">Linkedin &#8599;</a>
+        </div>
+        
+        <div class="contact-services-wrap">
+            <div class="contact-services-heading">OUR SERVICES</div>
+            <div class="contact-services-text">
+                BRAND IDENTITY &bull; CONTENT CREATION &bull; SOCIAL MEDIA &bull; PHOTOGRAPHY &amp; VIDEOGRAPHY &bull; WEB DESIGN &bull; 3D &amp; AI CREATION
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MOTEL MILANO MINIMAL FOOTER -->
+<div class="motel-minimal-footer">
+    <a href="mailto:phubbed.studio@gmail.com" class="motel-footer-mail">phubbed.studio@gmail.com</a>
+    <div class="motel-footer-center">20132 MILAN, ITALY</div>
+    <div class="motel-footer-copy">&copy;2026 PHUBBED STUDIO&trade;</div>
+</div>
+
+</body>
+</html>
