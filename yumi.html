@@ -6,8 +6,80 @@
 <title>Yumi — Phubbed Studio</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
+    /* Master Helvetica Typeface Definitions */
+  @font-face {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-roman.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 900;
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+    /* Master Helvetica Typeface Definitions */
+  @font-face {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-roman.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 900;
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
   @font-face {
     font-family: 'helvetica-w01-roman';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-roman.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'helvetica-w01-roman';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'helvetica-w01-bold';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'helvetica-w01-bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'helvetica-w01-light';
     font-style: normal;
     font-weight: 400;
     src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-roman.woff2') format('woff2');
@@ -17,7 +89,14 @@
     font-family: 'helvetica-w01-bold';
     font-style: normal;
     font-weight: 700;
-    src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-bold.woff2') format('woff2');
+    src: url('https://static.parastorage.com/fonts/v2/2f12de04-5ca4-4ada-9e66-a958673b12b5/v1/helvetica-w01-bold.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'helvetica-w01-light';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://static.parastorage.com/fonts/v2/2af1bf48-e783-4da8-9fa0-599dde29f2d5/v1/helvetica-w01-roman.woff2') format('woff2');
     font-display: swap;
   }
 
@@ -26,7 +105,7 @@
     width: 100%; height: 100%;
     overflow: hidden;
     background: #ffffff;
-    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-roman', sans-serif;
     color: #000000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -87,7 +166,7 @@
     margin: 0;
   }
   .motel-brand-title strong {
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
   }
   .motel-divider {
@@ -104,7 +183,7 @@
   }
   .motel-nav-link {
     font-size: 11px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -132,7 +211,7 @@
   }
   .proj-nav-btn {
     font-size: 11px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -185,7 +264,7 @@
 
   .work-title {
     font-size: 13px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -196,7 +275,7 @@
 
   .work-desc {
     font-size: 11.5px;
-    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-roman', sans-serif;
     line-height: 1.45;
     color: rgba(0, 0, 0, 0.75);
     margin-bottom: 24px;
@@ -215,7 +294,7 @@
   .work-links a {
     display: inline-block;
     font-size: 11px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -303,7 +382,7 @@
   .motel-footer-mail {
     pointer-events: auto;
     font-size: 11px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
     letter-spacing: 0.04em;
     color: #000000;
@@ -316,7 +395,7 @@
   .motel-footer-counter {
     pointer-events: auto;
     font-size: 11px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: rgba(0, 0, 0, 0.4);
@@ -325,7 +404,7 @@
   .motel-footer-copy {
     pointer-events: auto;
     font-size: 11px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica', 'helvetica-w01-bold', sans-serif;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
