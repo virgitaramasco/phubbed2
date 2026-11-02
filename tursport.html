@@ -150,7 +150,7 @@
     user-select: none;
   }
 
-  /* Main Container */
+  /* Main Container - Full Bleed */
   .work-container {
     position: fixed;
     top: 0;
@@ -160,18 +160,20 @@
     height: 100dvh;
     display: flex;
     box-sizing: border-box;
-    padding-top: 75px;
-    padding-bottom: 60px;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
   }
 
   /* Left Sidebar: Text & Info */
   .work-sidebar {
-    width: 380px;
-    min-width: 340px;
-    max-width: 420px;
+    width: 360px;
+    min-width: 320px;
+    max-width: 400px;
     height: 100%;
-    padding: 40px 36px 30px 40px;
+    height: 100vh;
+    height: 100dvh;
+    padding: 90px 36px 60px 36px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,7 +200,7 @@
     line-height: 1.45;
     color: rgba(0, 0, 0, 0.75);
     margin-bottom: 24px;
-    max-height: 38vh;
+    max-height: 45vh;
     overflow-y: auto;
     padding-right: 12px;
   }
@@ -208,29 +210,6 @@
   .work-desc::-webkit-scrollbar-thumb {
     background: rgba(0,0,0,0.15);
     border-radius: 2px;
-  }
-
-  .work-services-heading {
-    font-size: 11px;
-    font-family: 'helvetica-w01-bold', Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #000000;
-    margin-bottom: 10px;
-  }
-
-  .work-services-list {
-    list-style: none;
-    margin-bottom: 24px;
-  }
-  .work-services-list li {
-    font-size: 11.5px;
-    font-family: 'helvetica-w01-roman', Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    color: rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
 
   .work-links a {
@@ -249,16 +228,19 @@
     opacity: 0.5;
   }
 
-  /* Right Horizontal Gallery */
+  /* Right Horizontal Gallery - Full Bleed Vertically, Proportional Horizontally, Zero Margins */
   .work-gallery-track {
     flex: 1;
     height: 100%;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0 60px 0 20px;
-    gap: 24px;
+    padding: 0;
+    margin: 0;
+    gap: 0;
     box-sizing: border-box;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -273,27 +255,35 @@
   }
 
   .work-media-item {
-    height: calc(100vh - 160px);
-    max-height: 720px;
+    height: 100%;
+    height: 100vh;
+    height: 100dvh;
     width: auto;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f7f7f7;
+    background: #000000;
     border-radius: 0 !important;
     overflow: hidden;
     line-height: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .work-media-item img,
   .work-media-item video {
     height: 100%;
+    height: 100vh;
+    height: 100dvh;
     width: auto;
-    object-fit: contain;
+    max-width: none;
+    object-fit: cover;
     display: block;
     border-radius: 0 !important;
     pointer-events: none;
+    margin: 0;
+    padding: 0;
   }
 
   /* Minimal Footer */
@@ -385,14 +375,14 @@
       overflow-x: hidden;
       overflow-y: auto;
       padding-top: 60px;
-      padding-bottom: 20px;
+      padding-bottom: 0;
     }
     .work-sidebar {
       width: 100%;
       min-width: 0;
       max-width: none;
       height: auto;
-      padding: 16px 20px 24px 20px;
+      padding: 20px 20px 24px 20px;
     }
     .work-desc {
       max-height: none;
@@ -401,14 +391,22 @@
     }
     .work-gallery-track {
       width: 100vw;
-      height: 60vh;
-      min-height: 380px;
-      padding: 0 20px;
-      gap: 16px;
+      height: 70vh;
+      min-height: 420px;
+      padding: 0;
+      margin: 0;
+      gap: 0;
     }
     .work-media-item {
       height: 100%;
+      height: 70vh;
+      min-height: 420px;
       max-height: none;
+    }
+    .work-media-item img,
+    .work-media-item video {
+      height: 100%;
+      width: auto;
     }
     .motel-minimal-footer {
       display: none !important;
@@ -451,13 +449,6 @@
     <div class="work-sidebar">
         <h1 class="work-title">Tursport</h1>
         
-        <div class="work-services">
-            <h4 class="work-services-heading">WHAT WE DO</h4>
-            <ul class="work-services-list">
-                <li>BRAND IDENTITY</li>
-                <li>HOSPITALITY & SPORTS</li>
-            </ul>
-        </div>
         <div class="work-links"><a href="https://www.instagram.com/tursport.hotel?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">INSTAGRAM &#8599;</a></div>
     </div>
 
@@ -469,23 +460,23 @@
         <div class="work-media-item"><video src="brand_identity_web/tursport/50_comp.mp4" poster="brand_identity_web/tursport/50_comp_poster.webp"  autoplay loop muted playsinline></video></div>
         <div class="work-media-item"><video src="brand_identity_web/tursport/51_comp.mp4" poster="brand_identity_web/tursport/51_comp_poster.webp"  autoplay loop muted playsinline></video></div>
         <div class="work-media-item"><video src="brand_identity_web/tursport/52_comp.mp4" poster="brand_identity_web/tursport/52_comp_poster.webp"  autoplay loop muted playsinline></video></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/COVER.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/6 copia.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/7 copia 2.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/8 copia.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/14 copia.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/15 copia.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/18.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/24.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/25.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/26.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/35.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/37.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/39.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/40.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/42.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/45.webp"  loading="lazy"></div>
-        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/46.webp"  loading="lazy"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/COVER.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/6 copia.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/7 copia 2.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/8 copia.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/14 copia.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/15 copia.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/18.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/24.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/25.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/26.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/35.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/37.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/39.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/40.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/42.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/45.webp"></div>
+        <div class="work-media-item"><img alt="Tursport" src="brand_identity_web/tursport/46.webp"></div>
     </div>
 </div>
 
